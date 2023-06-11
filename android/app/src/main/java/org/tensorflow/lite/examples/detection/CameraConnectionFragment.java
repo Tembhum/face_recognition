@@ -44,6 +44,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
@@ -252,6 +253,7 @@ public class CameraConnectionFragment extends Fragment {
       final OnImageAvailableListener imageListener,
       final int layout,
       final Size inputSize) {
+    Log.d("CCF", "CameraConectionFragment is running now");
     return new CameraConnectionFragment(callback, imageListener, layout, inputSize);
   }
 
@@ -276,11 +278,13 @@ public class CameraConnectionFragment extends Fragment {
   @Override
   public View onCreateView(
       final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+    Log.d("CCF", "onCreateView is running now");
     return inflater.inflate(layout, container, false);
   }
 
   @Override
   public void onViewCreated(final View view, final Bundle savedInstanceState) {
+    Log.d("CCF", "onViewCreated is running now");
     textureView = (AutoFitTextureView) view.findViewById(R.id.texture);
   }
 
@@ -318,6 +322,7 @@ public class CameraConnectionFragment extends Fragment {
 
   /** Sets up member variables related to camera. */
   private void setUpCameraOutputs() {
+    Log.d("CCF", "setUpCameraOutputs is running now");
     final Activity activity = getActivity();
     final CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
     try {

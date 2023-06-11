@@ -41,6 +41,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 
 
+import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
@@ -600,6 +601,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
   @Override
   public void onClick(View v) {
+    Log.d("CA", "onClick is running now");
     if (v.getId() == R.id.plus) {
       String threads = threadsTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
